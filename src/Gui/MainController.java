@@ -21,12 +21,15 @@ public class MainController {
     private ListView<String> wordsList;
     @FXML
     private Label searchResultLabel;
+    @FXML
+    private Label wordCountLabel;
 
 
     @FXML
     public void initialize() {
         List<String> words = readWordsFromFile(getClass().getResource("/Gui/Words.txt").getPath());
         displayWords(words);
+        updateWordCount();
     }
 
 
@@ -77,7 +80,10 @@ public class MainController {
         wordsList.setItems(observableWords);
     }
 
-
+    private void updateWordCount() {
+        int count = wordsList.getItems().size();
+        wordCountLabel.setText(count + " words");
+    }
 
 }
 

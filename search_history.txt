@@ -1,0 +1,3 @@
+Search for 'test' and found results.
+Search for 'TEST' and found results.
+Search for 'Test' and found results.

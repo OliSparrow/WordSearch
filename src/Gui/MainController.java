@@ -122,7 +122,14 @@ public class MainController {
 
 
     private boolean searchForWord(String word) {
-        return wordsList.getItems().contains(word);
+
+        for (String currentWord : wordsList.getItems()) {
+            if (currentWord.equalsIgnoreCase(word)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void updateSearchHistory(String word, boolean found) {

@@ -12,9 +12,9 @@ import javafx.scene.control.TextField;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class MainController {
+    private static MainController instance;
     @FXML
     private TextField inputWord;
     @FXML
@@ -33,6 +33,19 @@ public class MainController {
     private Button clearHistory;
     private final String historyFileName = "search_history.txt";
 
+
+
+
+    public MainController() {
+        //Made to prevent outside instantiation.
+    }
+
+    public static MainController getInstance() {
+        if(instance == null) {
+            instance = new MainController();
+        }
+        return instance;
+    }
 
     @FXML
     public void initialize() {

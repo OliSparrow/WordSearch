@@ -1,6 +1,5 @@
 package Gui;
 
-import com.sun.tools.javac.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -31,7 +30,7 @@ public class MainController {
     private ListView<String> historyList;
     @FXML
     private Button clearHistory;
-    private final String historyFileName = "search_history.txt";
+    private final String historyFileName = "src/Gui/search_history.txt";
 
 
 

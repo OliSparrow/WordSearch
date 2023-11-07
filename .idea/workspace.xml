@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="738abe18-c0a1-4895-92be-47066a8145cd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search_history.txt" beforeDir="false" afterPath="$PROJECT_DIR$/search_history.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_history.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/search_history.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +128,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jay_J\IdeaProjects\WordSearch\src" />
+      <recent name="C:\Users\Jay_J\IdeaProjects\WordSearch\.idea" />
       <recent name="C:\Users\Jay_J\IdeaProjects\WordSearch\src\Gui" />
     </key>
   </component>
@@ -156,7 +156,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699345564393</updated>
       <workItem from="1699345565416" duration="2862000" />
-      <workItem from="1699350723765" duration="7311000" />
+      <workItem from="1699350723765" duration="7652000" />
     </task>
     <servers />
   </component>

@@ -2,6 +2,7 @@ package Gui;
 
 import com.sun.tools.javac.Main;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,11 +19,9 @@ public class MainController {
     private TextField inputWord;
     @FXML
     private ListView<String> wordsList;
+    @FXML
+    private Label searchResultLabel;
 
-
-    public MainController() {
-
-    }
 
     @FXML
     public void initialize() {
@@ -33,10 +32,27 @@ public class MainController {
 
     //Method for Search button:
     public void searchWord(){
-        if(inputWord != null) {
-            String wordToSearch = inputWord.getText().trim();
-            //Retrieves the word from input
-            System.out.println("Searched word: " + wordToSearch); //Prints word searched into terminal. Just a testing mechanism.
+        String wordToSearch = inputWord.getText().trim();
+
+        if (wordToSearch.isEmpty()) {
+            System.out.println("Please enter a word to search.");
+            return;
+        }
+
+        boolean wordFound = false;
+        for (String word : wordsList.getItems()) {
+            if (word.equalsIgnoreCase(wordToSearch)) {
+                wordFound = true;
+                wordsList.scrollTo(word);
+                wordsList.getSelectionModel().select(word);
+                break;
+            }
+        }
+
+        if (wordFound) {
+            searchResultLabel.setText(wordToSearch + " was found!");
+        } else {
+            searchResultLabel.setText(wordToSearch + " was not found!");
         }
     }
 
@@ -60,6 +76,7 @@ public class MainController {
         ObservableList<String> observableWords = FXCollections.observableArrayList(words);
         wordsList.setItems(observableWords);
     }
+
 
 
 }

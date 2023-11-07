@@ -45,5 +45,6 @@
       </Label>
       <Label fx:id="totalWordCount" layoutX="138.0" layoutY="414.0" text="0" />
       <Label layoutX="330.0" layoutY="414.0" />
+      <Label fx:id="searchResultLabel" layoutX="316.0" layoutY="414.0" text="Label" />
    </children>
 </AnchorPane>

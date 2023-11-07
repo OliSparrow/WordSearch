@@ -15,14 +15,14 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ListView layoutX="231.0" layoutY="68.0" prefHeight="134.0" prefWidth="171.0" />
-      <ListView layoutX="415.0" layoutY="68.0" prefHeight="134.0" prefWidth="171.0" />
+      <ListView fx:id="wordsStartingWithAList" layoutX="231.0" layoutY="68.0" prefHeight="126.0" prefWidth="171.0" />
+      <ListView fx:id="wordsStartingWithNList" layoutX="415.0" layoutY="68.0" prefHeight="126.0" prefWidth="171.0" />
       <ListView fx:id="historyList" layoutX="231.0" layoutY="247.0" prefHeight="126.0" prefWidth="355.0" />
       <Button layoutX="231.0" layoutY="379.0" mnemonicParsing="false" onAction="#clearHistory" prefHeight="26.0" prefWidth="355.0" text="Clear History" />
       <TextField fx:id="inputWord" layoutX="20.0" layoutY="15.0" prefHeight="26.0" prefWidth="483.0" promptText="Input Word" />
       <Button layoutX="513.0" layoutY="15.0" mnemonicParsing="false" onAction="#searchWord" prefHeight="26.0" prefWidth="73.0" text="Search" />
-      <Button layoutX="231.0" layoutY="212.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="171.0" text="Read" />
-      <Button layoutX="415.0" layoutY="212.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="171.0" text="Read" />
+      <Button layoutX="231.0" layoutY="197.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="171.0" text="Read" />
+      <Button layoutX="417.0" layoutY="197.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="171.0" text="Read" />
       <Label layoutX="20.0" layoutY="51.0" text="Words:">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -46,5 +46,10 @@
       <Label fx:id="wordCountLabel" layoutX="132.0" layoutY="414.0" text="0" />
       <Label layoutX="330.0" layoutY="414.0" />
       <Label fx:id="searchResultLabel" layoutX="316.0" layoutY="414.0" />
+      <Label layoutX="231.0" layoutY="228.0" text="History:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

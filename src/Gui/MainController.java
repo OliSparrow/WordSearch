@@ -12,12 +12,17 @@ import javafx.scene.control.TextField;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MainController {
     @FXML
     private TextField inputWord;
     @FXML
     private ListView<String> wordsList;
+    @FXML
+    private ListView<String> wordsStartingWithAList;
+    @FXML
+    private ListView<String> wordsStartingWithNList;
     @FXML
     private Label searchResultLabel;
     @FXML
@@ -35,6 +40,8 @@ public class MainController {
         displayWords(words);
         updateWordCount();
         loadSearchHistory();
+        displayWordsStartingWithA();
+        displayWordsStartingWithN();
     }
 
 
@@ -43,18 +50,15 @@ public class MainController {
         String wordToSearch = inputWord.getText().trim();
         boolean found = searchForWord(wordToSearch);
 
-        String searchMessage = "Search for '" + wordToSearch + "' and ";
-        if(found) {
-            searchMessage += "found results.";
-        } else {
-            searchMessage += "found no results.";
-        }
-
-        searchResultLabel.setText(searchMessage);
-
         if (wordToSearch.isEmpty()) {
             System.out.println("Please enter a word to search.");
             return;
+        }
+
+        if (found) {
+            searchResultLabel.setText(wordToSearch + " was found!");
+        } else {
+            searchResultLabel.setText(wordToSearch + " was not found!");
         }
 
         boolean wordFound = false;
@@ -73,7 +77,7 @@ public class MainController {
             searchResultLabel.setText(wordToSearch + " was not found!");
         }
 
-        updateSearchHistory(searchMessage);
+        updateSearchHistory(wordToSearch, found);
         saveSearchHistory();
     }
 
@@ -108,7 +112,14 @@ public class MainController {
         return wordsList.getItems().contains(word);
     }
 
-    private void updateSearchHistory(String searchMessage) {
+    private void updateSearchHistory(String word, boolean found) {
+        String searchMessage = "Search for '" + word + "' and ";
+        if (found) {
+            searchMessage += "found results.";
+        } else {
+            searchMessage += "found no results";
+        }
+
         historyList.getItems().add(searchMessage);
     }
     private void loadSearchHistory() {
@@ -135,6 +146,33 @@ public class MainController {
     public void clearHistory() {
         historyList.getItems().clear();
         saveSearchHistory();
+    }
+
+
+    public void displayWordsStartingWithA() {
+        List<String> wordsStartingWithA = new ArrayList<>();
+
+        for (String word : wordsList.getItems()) {
+            if (word.toUpperCase().startsWith("A")) {
+                wordsStartingWithA.add(word);
+            }
+        }
+
+        ObservableList<String> observableListStartingWithA = FXCollections.observableArrayList(wordsStartingWithA);
+        wordsStartingWithAList.setItems(observableListStartingWithA);
+    }
+
+    public void displayWordsStartingWithN() {
+        List<String> wordsStartingWithN = new ArrayList<>();
+
+        for (String word : wordsList.getItems()) {
+            if (word.toUpperCase().startsWith("N")) {
+                wordsStartingWithN.add(word);
+            }
+        }
+
+        ObservableList<String> observableListStartingWithA = FXCollections.observableArrayList(wordsStartingWithN);
+        wordsStartingWithNList.setItems(observableListStartingWithA);
     }
 
 }
